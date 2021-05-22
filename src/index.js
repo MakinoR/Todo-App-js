@@ -26,12 +26,25 @@ const onClickAdd = () => {
   completeButton.addEventListener("click", () => {
     div.removeChild(completeButton);
     div.removeChild(deleteButton);
+    div.appendChild(backButton);
     const completeTarget = div.parentNode;
     // console.log(deleteTarget);
-
+    
     document.getElementById("complete-list").appendChild(completeTarget);
     // alert("unchi!!");
   });
+  
+  backButton.addEventListener('click', ()=> {
+    div.removeChild(backButton);
+    div.appendChild(completeButton);
+    div.appendChild(deleteButton);
+    const completeTarget = div.parentNode;
+    // console.log(deleteTarget);
+    
+    document.getElementById("incomplete-list").appendChild(completeTarget);
+    
+    // alert('unchi');
+  })
 
   div.className = "list-row";
 
