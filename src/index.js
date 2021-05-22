@@ -18,9 +18,8 @@ const onClickAdd = () => {
 
   deleteButton.addEventListener("click", () => {
     const deleteTarget = div.parentNode;
-    // console.log(deleteTarget);
     document.getElementById("incomplete-list").removeChild(deleteTarget);
-    // alert("unchi!!");
+    // completeORbackFromList("incomplete-list", deleteTarget);
   });
 
   completeButton.addEventListener("click", () => {
@@ -28,35 +27,30 @@ const onClickAdd = () => {
     div.removeChild(deleteButton);
     div.appendChild(backButton);
     const completeTarget = div.parentNode;
-    // console.log(deleteTarget);
-    
     document.getElementById("complete-list").appendChild(completeTarget);
-    // alert("unchi!!");
   });
-  
-  backButton.addEventListener('click', ()=> {
+
+  backButton.addEventListener("click", () => {
     div.removeChild(backButton);
     div.appendChild(completeButton);
     div.appendChild(deleteButton);
     const completeTarget = div.parentNode;
-    // console.log(deleteTarget);
-    
-    document.getElementById("incomplete-list").appendChild(completeTarget);
-    
-    // alert('unchi');
-  })
+    // document.getElementById("incomplete-list").appendChild(completeTarget);
+    completeORbackFromList("incomplete-list", completeTarget);
+  });
+
+  const completeORbackFromList = (a, b) => {
+    document.getElementById(a).appendChild(b);
+  };
 
   div.className = "list-row";
 
+  document.getElementById("incomplete-list").appendChild(li);
   li.appendChild(div);
   div.appendChild(p);
   div.appendChild(completeButton);
   div.appendChild(deleteButton);
   p.innerText = inputText;
-
-  document.getElementById("incomplete-list").appendChild(li);
-  // console.log(li);
-  // alert(inputText);
 };
 
 document
