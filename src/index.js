@@ -5,12 +5,25 @@ const onClickAdd = () => {
   const div = document.createElement("div");
   const li = document.createElement("li");
   const p = document.createElement("p");
-  // const button = document.createElement("button");
+  const completeButton = document.createElement("button");
+  const deleteButton = document.createElement("button");
 
-  div.className = "list-low";
+  completeButton.innerText = "完了";
+  completeButton.addEventListener("click", () => {
+    alert("unchi!!");
+  });
+  deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    alert("unchi!!");
+  });
+
+  div.className = "list-row";
+
   li.appendChild(div);
   div.appendChild(p);
-  p.textContent = inputText;
+  div.appendChild(completeButton);
+  div.appendChild(deleteButton);
+  p.innerText = inputText;
 
   document.getElementById("incomplete-list").appendChild(li);
   console.log(li);
