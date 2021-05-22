@@ -6,7 +6,7 @@ const onClickAdd = () => {
   const li = document.createElement("li");
   const p = document.createElement("p");
   // const button = document.createElement("button");
-// ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ooooooooooooooooooooooooooooooo
+
   div.className = "list-low";
   li.appendChild(div);
   div.appendChild(p);
