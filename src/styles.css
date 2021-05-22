@@ -31,16 +31,16 @@ button:hover {
   margin: 8px;
 }
 
-.imcomplete-area {
+.incomplete-area {
   border-radius: 10px;
-  background-color: yellow;
+  background-color: rgb(235, 235, 134);
   min-height: 200px;
   padding: 8px;
   margin: 8px;
 }
 
 .complete-area {
-  background-color: lime;
+  background-color: rgba(113, 226, 113, 0.705);
   border-radius: 10px;
   min-height: 200px;
   padding: 8px;

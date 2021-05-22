@@ -7,14 +7,30 @@ const onClickAdd = () => {
   const p = document.createElement("p");
   const completeButton = document.createElement("button");
   const deleteButton = document.createElement("button");
+  const backButton = document.createElement("button");
 
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    alert("unchi!!");
+    // alert("unchi!!");
   });
   deleteButton.innerText = "削除";
+  backButton.innerText = "戻す";
+
   deleteButton.addEventListener("click", () => {
-    alert("unchi!!");
+    const deleteTarget = div.parentNode;
+    // console.log(deleteTarget);
+    document.getElementById("incomplete-list").removeChild(deleteTarget);
+    // alert("unchi!!");
+  });
+
+  completeButton.addEventListener("click", () => {
+    div.removeChild(completeButton);
+    div.removeChild(deleteButton);
+    const completeTarget = div.parentNode;
+    // console.log(deleteTarget);
+
+    document.getElementById("complete-list").appendChild(completeTarget);
+    // alert("unchi!!");
   });
 
   div.className = "list-row";
@@ -26,8 +42,8 @@ const onClickAdd = () => {
   p.innerText = inputText;
 
   document.getElementById("incomplete-list").appendChild(li);
-  console.log(li);
-  alert(inputText);
+  // console.log(li);
+  // alert(inputText);
 };
 
 document
